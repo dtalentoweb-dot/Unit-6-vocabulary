@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulario Educación y Empleo</title>
+<style>
+    /* ESTILOS DE LA TABLA - Mismos estilos que el archivo original */
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+    
+    .vocab-table {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px; /* Espacio después de la tabla */
+    }
+    
+    .vocab-table th, .vocab-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        vertical-align: middle;
+    }
+    
+    .vocab-table th {
+        background-color: #2c3e50;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    
+    .vocab-table tr:nth-child(even) { background-color: #f9f9f9; }
+    .vocab-table tr:hover { background-color: #f1f1f1; }
+
+    .col-audio { text-align: center; width: 80px; }
+    .col-spanish { color: #555; }
+
+    /* Estilo para las categorías/separadores */
+    .category-header {
+        background-color: #3498db;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-top: 3px solid #2c3e50;
+    }
+
+    /* ESTILO DEL BOTÓN PLAY */
+    .play-btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.1s, background-color 0.2s;
+    }
+    
+    .play-btn:hover { background-color: #2980b9; transform: scale(1.1); }
+    .play-btn:active { transform: scale(0.95); }
+    
+    .play-btn svg { width: 16px; height: 16px; fill: white; margin-left: 2px; }
+
+</style>
+</head>
+<body>
+
+<table class="vocab-table">
+    <thead>
+        <tr>
+            <th>ENGLISH</th>
+            <th class="col-audio">AUDIO</th>
+            <th>ESPAÑOL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="3" class="category-header">EDUCATION</td></tr>
+        <tr><td>Nursery school</td><td class="col-audio"><audio id="aud-nursery" src="nursery.mp3"></audio><button class="play-btn" onclick="playAudio('aud-nursery')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Guardería</td></tr>
+        <tr><td>Primary school</td><td class="col-audio"><audio id="aud-primary" src="primary.mp3"></audio><button class="play-btn" onclick="playAudio('aud-primary')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Colegio / escuela</td></tr>
+        <tr><td>High school</td><td class="col-audio"><audio id="aud-highschool" src="highschool.mp3"></audio><button class="play-btn" onclick="playAudio('aud-highschool')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Instituto</td></tr>
+        <tr><td>University</td><td class="col-audio"><audio id="aud-university" src="university.mp3"></audio><button class="play-btn" onclick="playAudio('aud-university')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Universidad</td></tr>
+        <tr><td>State school</td><td class="col-audio"><audio id="aud-stateschool" src="stateschool.mp3"></audio><button class="play-btn" onclick="playAudio('aud-stateschool')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Colegio público</td></tr>
+        <tr><td>Private school</td><td class="col-audio"><audio id="aud-privateschool" src="privateschool.mp3"></audio><button class="play-btn" onclick="playAudio('aud-privateschool')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Colegio privado</td></tr>
+        <tr><td>Boarding school</td><td class="col-audio"><audio id="aud-boarding" src="boarding.mp3"></audio><button class="play-btn" onclick="playAudio('aud-boarding')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Internado</td></tr>
+        <tr><td>Private lessons</td><td class="col-audio"><audio id="aud-privatelessons" src="privatelessons.mp3"></audio><button class="play-btn" onclick="playAudio('aud-privatelessons')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Clases particulares</td></tr>
+        <tr><td>Degree</td><td class="col-audio"><audio id="aud-degree" src="degree.mp3"></audio><button class="play-btn" onclick="playAudio('aud-degree')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Grado universitario</td></tr>
+        <tr><td>Course</td><td class="col-audio"><audio id="aud-course" src="course.mp3"></audio><button class="play-btn" onclick="playAudio('aud-course')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Curso</td></tr>
+        <tr><td>To have a degree in</td><td class="col-audio"><audio id="aud-haveadegeeein" src="haveadegeeein.mp3"></audio><button class="play-btn" onclick="playAudio('aud-haveadegeeein')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Ser graduado en</td></tr>
+        <tr><td>End of degree project (TFG)</td><td class="col-audio"><audio id="aud-tfg" src="tfg.mp3"></audio><button class="play-btn" onclick="playAudio('aud-tfg')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">TFG (Trabajo Fin de Grado)</td></tr>
+        <tr><td>A thesis</td><td class="col-audio"><audio id="aud-thesis" src="thesis.mp3"></audio><button class="play-btn" onclick="playAudio('aud-thesis')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Una tesis</td></tr>
+        <tr><td>A doctorate / PhD</td><td class="col-audio"><audio id="aud-phd" src="phd.mp3"></audio><button class="play-btn" onclick="playAudio('aud-phd')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Un doctorado</td></tr>
+        <tr><td>A master’s degree</td><td class="col-audio"><audio id="aud-master" src="master.mp3"></audio><button class="play-btn" onclick="playAudio('aud-master')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Un máster</td></tr>
+        <tr><td>Headteacher / principal</td><td class="col-audio"><audio id="aud-headteacher" src="headteacher.mp3"></audio><button class="play-btn" onclick="playAudio('aud-headteacher')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Director/a</td></tr>
+        <tr><td>Teacher</td><td class="col-audio"><audio id="aud-teacher" src="teacher.mp3"></audio><button class="play-btn" onclick="playAudio('aud-teacher')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Profesor/a</td></tr>
+        <tr><td>Primary school teacher</td><td class="col-audio"><audio id="aud-primaryteacher" src="primaryteacher.mp3"></audio><button class="play-btn" onclick="playAudio('aud-primaryteacher')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Profesor/a de primaria (maestro/a)</td></tr>
+        <tr><td>Classmate</td><td class="col-audio"><audio id="aud-classmate" src="classmate.mp3"></audio><button class="play-btn" onclick="playAudio('aud-classmate')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Compañero/a de clase</td></tr>
+        <tr><td>Professor</td><td class="col-audio"><audio id="aud-professor" src="professor.mp3"></audio><button class="play-btn" onclick="playAudio('aud-professor')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Un profesor universitario</td></tr>
+        <tr><td>Staffroom</td><td class="col-audio"><audio id="aud-staffroom" src="staffroom.mp3"></audio><button class="play-btn" onclick="playAudio('aud-staffroom')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Sala de profesores</td></tr>
+        <tr><td>Library</td><td class="col-audio"><audio id="aud-library" src="library.mp3"></audio><button class="play-btn" onclick="playAudio('aud-library')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Biblioteca</td></tr>
+        <tr><td>Playground</td><td class="col-audio"><audio id="aud-playground" src="playground.mp3"></audio><button class="play-btn" onclick="playAudio('aud-playground')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Patio</td></tr>
+        <tr><td>Desk</td><td class="col-audio"><audio id="aud-desk" src="desk.mp3"></audio><button class="play-btn" onclick="playAudio('aud-desk')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Pupitre</td></tr>
+        <tr><td>Blackboard</td><td class="col-audio"><audio id="aud-blackboard" src="blackboard.mp3"></audio><button class="play-btn" onclick="playAudio('aud-blackboard')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Pizarra</td></tr>
+        <tr><td>Chalk</td><td class="col-audio"><audio id="aud-chalk" src="chalk.mp3"></audio><button class="play-btn" onclick="playAudio('aud-chalk')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Tiza</td></tr>
+        <tr><td>School bag</td><td class="col-audio"><audio id="aud-schoolbag" src="schoolbag.mp3"></audio><button class="play-btn" onclick="playAudio('aud-schoolbag')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Mochila escolar</td></tr>
+        
+        <tr><td colspan="3" class="category-header">PHRASES</td></tr>
+        <tr><td>To go to school/university</td><td class="col-audio"><audio id="aud-gotoschool" src="gotoschool.mp3"></audio><button class="play-btn" onclick="playAudio('aud-gotoschool')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Ir al colegio /Universidad</td></tr>
+        <tr><td>To study</td><td class="col-audio"><audio id="aud-study" src="study.mp3"></audio><button class="play-btn" onclick="playAudio('aud-study')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Estudiar</td></tr>
+        <tr><td>To learn</td><td class="col-audio"><audio id="aud-learn" src="learn.mp3"></audio><button class="play-btn" onclick="playAudio('aud-learn')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Aprender</td></tr>
+        <tr><td>To do my homework</td><td class="col-audio"><audio id="aud-homework" src="homework.mp3"></audio><button class="play-btn" onclick="playAudio('aud-homework')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Hacer los deberes</td></tr>
+        <tr><td>To know</td><td class="col-audio"><audio id="aud-know" src="know.mp3"></audio><button class="play-btn" onclick="playAudio('aud-know')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Saber</td></tr>
+        <tr><td>To miss class / school</td><td class="col-audio"><audio id="aud-missclass" src="missclass.mp3"></audio><button class="play-btn" onclick="playAudio('aud-missclass')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Faltar a clase</td></tr>
+        
+        <tr><td colspan="3" class="category-header">EXAMS</td></tr>
+        <tr><td>To sit / to take an exam</td><td class="col-audio"><audio id="aud-takeexam" src="takeexam.mp3"></audio><button class="play-btn" onclick="playAudio('aud-takeexam')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Presentarse / hacer un examen</td></tr>
+        <tr><td>To pass</td><td class="col-audio"><audio id="aud-pass" src="pass.mp3"></audio><button class="play-btn" onclick="playAudio('aud-pass')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Aprobar</td></tr>
+        <tr><td>To fail</td><td class="col-audio"><audio id="aud-fail" src="fail.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fail')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Suspender</td></tr>
+        <tr><td>Marks / grades</td><td class="col-audio"><audio id="aud-marks" src="marks.mp3"></audio><button class="play-btn" onclick="playAudio('aud-marks')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Notas</td></tr>
+        <tr><td>Oral exam</td><td class="col-audio"><audio id="aud-oralexam" src="oralexam.mp3"></audio><button class="play-btn" onclick="playAudio('aud-oralexam')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Examen oral</td></tr>
+        <tr><td>Written exam</td><td class="col-audio"><audio id="aud-writtenexam" src="writtenexam.mp3"></audio><button class="play-btn" onclick="playAudio('aud-writtenexam')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Examen escrito</td></tr>
+        <tr><td>To revise</td><td class="col-audio"><audio id="aud-revise" src="revise.mp3"></audio><button class="play-btn" onclick="playAudio('aud-revise')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Repasar</td></tr>
+        <tr><td>To repeat a year</td><td class="col-audio"><audio id="aud-repeatyear" src="repeatyear.mp3"></audio><button class="play-btn" onclick="playAudio('aud-repeatyear')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Repetir curso</td></tr>
+        
+        <tr><td colspan="3" class="category-header">JOBS</td></tr>
+        <tr><td>Accountant</td><td class="col-audio"><audio id="aud-accountant" src="accountant.mp3"></audio><button class="play-btn" onclick="playAudio('aud-accountant')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Contable</td></tr>
+        <tr><td>Actor</td><td class="col-audio"><audio id="aud-actor" src="actor.mp3"></audio><button class="play-btn" onclick="playAudio('aud-actor')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Actor</td></tr>
+        <tr><td>Actress</td><td class="col-audio"><audio id="aud-actress" src="actress.mp3"></audio><button class="play-btn" onclick="playAudio('aud-actress')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Actriz</td></tr>
+        <tr><td>Architect</td><td class="col-audio"><audio id="aud-architect" src="architect.mp3"></audio><button class="play-btn" onclick="playAudio('aud-architect')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Arquitecto</td></tr>
+        <tr><td>Astronaut</td><td class="col-audio"><audio id="aud-astronaut" src="astronaut.mp3"></audio><button class="play-btn" onclick="playAudio('aud-astronaut')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Astronauta</td></tr>
+        <tr><td>Babysitter</td><td class="col-audio"><audio id="aud-babysitter" src="babysitter.mp3"></audio><button class="play-btn" onclick="playAudio('aud-babysitter')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Niñero/a</td></tr>
+        <tr><td>Baker</td><td class="col-audio"><audio id="aud-baker" src="baker.mp3"></audio><button class="play-btn" onclick="playAudio('aud-baker')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Panadero</td></tr>
+        <tr><td>Barber</td><td class="col-audio"><audio id="aud-barber" src="barber.mp3"></audio><button class="play-btn" onclick="playAudio('aud-barber')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Barbero / peluquero (de hombre)</td></tr>
+        <tr><td>Bus driver</td><td class="col-audio"><audio id="aud-busdriver" src="busdriver.mp3"></audio><button class="play-btn" onclick="playAudio('aud-busdriver')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Chófer de autobús</td></tr>
+        <tr><td>Butcher</td><td class="col-audio"><audio id="aud-butcher" src="butcher.mp3"></audio><button class="play-btn" onclick="playAudio('aud-butcher')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Carnicero</td></tr>
+        <tr><td>Chemist</td><td class="col-audio"><audio id="aud-chemist" src="chemist.mp3"></audio><button class="play-btn" onclick="playAudio('aud-chemist')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Farmacéutico</td></tr>
+        <tr><td>Dentist</td><td class="col-audio"><audio id="aud-dentist" src="dentist.mp3"></audio><button class="play-btn" onclick="playAudio('aud-dentist')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Dentista</td></tr>
+        <tr><td>Doctor</td><td class="col-audio"><audio id="aud-doctor" src="doctor.mp3"></audio><button class="play-btn" onclick="playAudio('aud-doctor')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Médico</td></tr>
+        <tr><td>Electrician</td><td class="col-audio"><audio id="aud-electrician" src="electrician.mp3"></audio><button class="play-btn" onclick="playAudio('aud-electrician')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Electricista</td></tr>
+        <tr><td>Employee</td><td class="col-audio"><audio id="aud-employee" src="employee.mp3"></audio><button class="play-btn" onclick="playAudio('aud-employee')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Empleado</td></tr>
+        <tr><td>Farmer</td><td class="col-audio"><audio id="aud-farmer" src="farmer.mp3"></audio><button class="play-btn" onclick="playAudio('aud-farmer')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Agricultor</td></tr>
+        <tr><td>Fashion designer</td><td class="col-audio"><audio id="aud-fashiondesigner" src="fashiondesigner.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fashiondesigner')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Diseñador de moda</td></tr>
+        <tr><td>Firefighter</td><td class="col-audio"><audio id="aud-firefighter" src="firefighter.mp3"></audio><button class="play-btn" onclick="playAudio('aud-firefighter')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Bombero</td></tr>
+        <tr><td>Fisherman</td><td class="col-audio"><audio id="aud-fisherman" src="fisherman.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fisherman')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Pescador</td></tr>
+        <tr><td>Gardener</td><td class="col-audio"><audio id="aud-gardener" src="gardener.mp3"></audio><button class="play-btn" onclick="playAudio('aud-gardener')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Jardinero</td></tr>
+        <tr><td>Graphic designer</td><td class="col-audio"><audio id="aud-graphicdesigner" src="graphicdesigner.mp3"></audio><button class="play-btn" onclick="playAudio('aud-graphicdesigner')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Diseñador gráfico</td></tr>
+        <tr><td>Hairdresser</td><td class="col-audio"><audio id="aud-hairdresser" src="hairdresser.mp3"></audio><button class="play-btn" onclick="playAudio('aud-hairdresser')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Peluquero</td></tr>
+        <tr><td>Journalist</td><td class="col-audio"><audio id="aud-journalist" src="journalist.mp3"></audio><button class="play-btn" onclick="playAudio('aud-journalist')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Periodista</td></tr>
+        <tr><td>Judge</td><td class="col-audio"><audio id="aud-judge" src="judge.mp3"></audio><button class="play-btn" onclick="playAudio('aud-judge')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Juez</td></tr>
+        <tr><td>Lawyer</td><td class="col-audio"><audio id="aud-lawyer" src="lawyer.mp3"></audio><button class="play-btn" onclick="playAudio('aud-lawyer')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Abogado</td></tr>
+        <tr><td>Lifeguard</td><td class="col-audio"><audio id="aud-lifeguard" src="lifeguard.mp3"></audio><button class="play-btn" onclick="playAudio('aud-lifeguard')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Socorrista</td></tr>
+        <tr><td>Mechanic</td><td class="col-audio"><audio id="aud-mechanic" src="mechanic.mp3"></audio><button class="play-btn" onclick="playAudio('aud-mechanic')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Mecánico</td></tr>
+        <tr><td>Model</td><td class="col-audio"><audio id="aud-model" src="model.mp3"></audio><button class="play-btn" onclick="playAudio('aud-model')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Modelo</td></tr>
+        <tr><td>Nurse</td><td class="col-audio"><audio id="aud-nurse" src="nurse.mp3"></audio><button class="play-btn" onclick="playAudio('aud-nurse')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Enfermero</td></tr>
+        <tr><td>Pilot</td><td class="col-audio"><audio id="aud-pilot" src="pilot.mp3"></audio><button class="play-btn" onclick="playAudio('aud-pilot')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Piloto</td></tr>
+        <tr><td>Plumber</td><td class="col-audio"><audio id="aud-plumber" src="plumber.mp3"></audio><button class="play-btn" onclick="playAudio('aud-plumber')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Fontanero</td></tr>
+        <tr><td>Police officer</td><td class="col-audio"><audio id="aud-police" src="police.mp3"></audio><button class="play-btn" onclick="playAudio('aud-police')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Policía</td></tr>
+        <tr><td>Politician</td><td class="col-audio"><audio id="aud-politician" src="politician.mp3"></audio><button class="play-btn" onclick="playAudio('aud-politician')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Político</td></tr>
+        <tr><td>Psychologist</td><td class="col-audio"><audio id="aud-psychologist" src="psychologist.mp3"></audio><button class="play-btn" onclick="playAudio('aud-psychologist')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Psicólogo</td></tr>
+        <tr><td>Receptionist</td><td class="col-audio"><audio id="aud-receptionist" src="receptionist.mp3"></audio><button class="play-btn" onclick="playAudio('aud-receptionist')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Recepcionista</td></tr>
+        <tr><td>Salesman</td><td class="col-audio"><audio id="aud-salesman" src="salesman.mp3"></audio><button class="play-btn" onclick="playAudio('aud-salesman')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Vendedor</td></tr>
+        <tr><td>Scientist</td><td class="col-audio"><audio id="aud-scientist" src="scientist.mp3"></audio><button class="play-btn" onclick="playAudio('aud-scientist')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Científico</td></tr>
+        <tr><td>Secretary</td><td class="col-audio"><audio id="aud-secretary" src="secretary.mp3"></audio><button class="play-btn" onclick="playAudio('aud-secretary')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Secretario</td></tr>
+        <tr><td>Security guard</td><td class="col-audio"><audio id="aud-security" src="security.mp3"></audio><button class="play-btn" onclick="playAudio('aud-security')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Guardia de seguridad</td></tr>
+        <tr><td>Tourist guide</td><td class="col-audio"><audio id="aud-tourguide" src="tourguide.mp3"></audio><button class="play-btn" onclick="playAudio('aud-tourguide')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Guía turístico</td></tr>
+        <tr><td>Vet / veterinarian</td><td class="col-audio"><audio id="aud-vet" src="vet.mp3"></audio><button class="play-btn" onclick="playAudio('aud-vet')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Veterinario</td></tr>
+        <tr><td>Waiter</td><td class="col-audio"><audio id="aud-waiter" src="waiter.mp3"></audio><button class="play-btn" onclick="playAudio('aud-waiter')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Camarero</td></tr>
+        <tr><td>Waitress</td><td class="col-audio"><audio id="aud-waitress" src="waitress.mp3"></audio><button class="play-btn" onclick="playAudio('aud-waitress')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Camarera</td></tr>
+
+        <tr><td colspan="3" class="category-header">WORK AND EMPLOYMENT</td></tr>
+        <tr><td>Job</td><td class="col-audio"><audio id="aud-job" src="job.mp3"></audio><button class="play-btn" onclick="playAudio('aud-job')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Trabajo / empleo (puesto)</td></tr>
+        <tr><td>Work</td><td class="col-audio"><audio id="aud-work" src="work.mp3"></audio><button class="play-btn" onclick="playAudio('aud-work')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Trabajo</td></tr>
+        <tr><td>Application form</td><td class="col-audio"><audio id="aud-application" src="application.mp3"></audio><button class="play-btn" onclick="playAudio('aud-application')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Solicitud</td></tr>
+        <tr><td>Boss</td><td class="col-audio"><audio id="aud-boss" src="boss.mp3"></audio><button class="play-btn" onclick="playAudio('aud-boss')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Jefe/a</td></tr>
+        <tr><td>Interview</td><td class="col-audio"><audio id="aud-interview" src="interview.mp3"></audio><button class="play-btn" onclick="playAudio('aud-interview')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Entrevista</td></tr>
+        <tr><td>Vacancy</td><td class="col-audio"><audio id="aud-vacancy" src="vacancy.mp3"></audio><button class="play-btn" onclick="playAudio('aud-vacancy')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Puesto vacante</td></tr>
+        <tr><td>Salary</td><td class="col-audio"><audio id="aud-salary" src="salary.mp3"></audio><button class="play-btn" onclick="playAudio('aud-salary')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Salario / sueldo</td></tr>
+        <tr><td>Bonus</td><td class="col-audio"><audio id="aud-bonus" src="bonus.mp3"></audio><button class="play-btn" onclick="playAudio('aud-bonus')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Bonificación, plus, prima</td></tr>
+        <tr><td>Rise (BrE) / Raise (AmE)</td><td class="col-audio"><audio id="aud-raise" src="raise.mp3"></audio><button class="play-btn" onclick="playAudio('aud-raise')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Aumento (de sueldo)</td></tr>
+        <tr><td>Overtime</td><td class="col-audio"><audio id="aud-overtime" src="overtime.mp3"></audio><button class="play-btn" onclick="playAudio('aud-overtime')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Horas extra</td></tr>
+        <tr><td>Freelance</td><td class="col-audio"><audio id="aud-freelance" src="freelance.mp3"></audio><button class="play-btn" onclick="playAudio('aud-freelance')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Autónomo</td></tr>
+        <tr><td>Full-time job</td><td class="col-audio"><audio id="aud-fulltime" src="fulltime.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fulltime')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Trabajo de jornada completa</td></tr>
+        <tr><td>Part-time job</td><td class="col-audio"><audio id="aud-parttime" src="parttime.mp3"></audio><button class="play-btn" onclick="playAudio('aud-parttime')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Trabajo de media jornada</td></tr>
+        <tr><td>Team work</td><td class="col-audio"><audio id="aud-teamwork" src="teamwork.mp3"></audio><button class="play-btn" onclick="playAudio('aud-teamwork')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Trabajo en equipo</td></tr>
+        <tr><td>Day shift</td><td class="col-audio"><audio id="aud-dayshift" src="dayshift.mp3"></audio><button class="play-btn" onclick="playAudio('aud-dayshift')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Turno de día</td></tr>
+        <tr><td>Evening shift</td><td class="col-audio"><audio id="aud-eveningshift" src="eveningshift.mp3"></audio><button class="play-btn" onclick="playAudio('aud-eveningshift')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Turno de tarde</td></tr>
+        <tr><td>Night shift</td><td class="col-audio"><audio id="aud-nightshift" src="nightshift.mp3"></audio><button class="play-btn" onclick="playAudio('aud-nightshift')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Turno de noche</td></tr>
+        <tr><td>Unemployment benefit</td><td class="col-audio"><audio id="aud-unemployment" src="unemployment.mp3"></audio><button class="play-btn" onclick="playAudio('aud-unemployment')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Subsidio por desempleo</td></tr>
+        <tr><td>To be on the sick</td><td class="col-audio"><audio id="aud-onthesick" src="onthesick.mp3"></audio><button class="play-btn" onclick="playAudio('aud-onthesick')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Estar de baja</td></tr>
+        <tr><td>To apply for a job</td><td class="col-audio"><audio id="aud-applyforajob" src="applyforajob.mp3"></audio><button class="play-btn" onclick="playAudio('aud-applyforajob')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Solicitar un trabajo</td></tr>
+        <tr><td>To hire somebody</td><td class="col-audio"><audio id="aud-hire" src="hire.mp3"></audio><button class="play-btn" onclick="playAudio('aud-hire')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Contratar a alguien</td></tr>
+        <tr><td>To earn</td><td class="col-audio"><audio id="aud-earn" src="earn.mp3"></audio><button class="play-btn" onclick="playAudio('aud-earn')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Ganar (sueldo)</td></tr>
+        <tr><td>To fire somebody</td><td class="col-audio"><audio id="aud-fire" src="fire.mp3"></audio><button class="play-btn" onclick="playAudio('aud-fire')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Despedir a alguien (del trabajo)</td></tr>
+        <tr><td>To be unemployed</td><td class="col-audio"><audio id="aud-unemployed" src="unemployed.mp3"></audio><button class="play-btn" onclick="playAudio('aud-unemployed')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></td><td class="col-spanish">Estar en el paro</td></tr>
+    </tbody>
+</table>
+
+<script>
+    function playAudio(id) {
+        // Buscar el elemento de audio por su ID
+        var audio = document.getElementById(id);
+        
+        // Chequeo de seguridad: Si no encuentra el audio, avisa en la consola
+        if (!audio) {
+            console.error("ERROR: No encuentro la etiqueta <audio> con id: " + id);
+            return;
+        }
+
+        // 1. Pausar cualquier otro audio que esté sonando
+        document.querySelectorAll('audio').forEach(function(el) {
+            if(el !== audio) {
+                el.pause();
+                el.currentTime = 0;
+            }
+        });
+
+        // 2. Reproducir o pausar el seleccionado
+        if (audio.paused) {
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function(error) {
+                    // Este error es común si el navegador bloquea la reproducción sin interacción del usuario
+                    console.error("ERROR AL REPRODUCIR: Podría ser que el archivo no existe o el nombre está mal escrito (Mayúsculas/Minúsculas).", error);
+                });
+            }
+        } else {
+            audio.pause();
+        }
+    }
+</script>
+
+</body>
+</html>
